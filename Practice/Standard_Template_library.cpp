@@ -55,7 +55,7 @@ int main()
 
     // erase function in vector
     v4.erase(v4.begin() + 2); // Erase the third element
-    v4.erase(v4.begin()); // Erase the first element
+    v4.erase(v4.begin());     // Erase the first element
     cout << "Vector after erase: ";
     for (int i : v4)
     {
@@ -66,9 +66,9 @@ int main()
 
     // insert function in vector
 
-    v4.insert(v4.begin() + 1, 10); // Insert 10 at the second position
-    v4.insert(v4.end(), 20);       // Insert 20 at the end
-    v4.insert(v4.begin(), 30);     // Insert 30 at the beginning
+    v4.insert(v4.begin() + 1, 10);    // Insert 10 at the second position
+    v4.insert(v4.end(), 20);          // Insert 20 at the end
+    v4.insert(v4.begin(), 30);        // Insert 30 at the beginning
     v4.insert(v4.begin() + 3, 2, 10); // Insert 10 twice at the third position
     cout << "Vector after insert: ";
     for (int i : v4)
@@ -77,7 +77,66 @@ int main()
     }
     cout << endl;
 
+    // copy function in vector
+    vector<int> v5(v4.begin(), v4.end()); // Copy using iterators
+    cout << "Copied Vector: ";
+    for (int i : v5)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
 
+    // Next topic is list
+    // List :- list is a container and it is dynamic in nature
+    list<int> ls;
+    ls.push_back(10);    // Add element to the end of the list
+    ls.emplace_back(20); // Add element to the end of the list
+    ls.push_front(5);    // Add element to the front of the list
+    cout << "List: ";
+    for (int i : ls)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    // rest of the functions are same as vector
+    // begin , end , rbegin ,rend ,clear ,insert , size ,swap
+
+    // deque
+    // deque is a double ended queue and it is dynamic in nature
+    deque<int> dq;
+    dq.push_back(10);    // Add element to the end of the deque
+    dq.emplace_back(20); // Add element to the end of the deque
+    dq.push_front(5);    // Add element to the front of the deque
+    cout << "Deque: ";
+    for (int i : dq)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    dq.pop_back();  // Remove the last element
+    dq.pop_front(); // Remove the first element
+    cout << "Deque after pop: ";
+    for (int i : dq)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    // rest of the functions are same as vector
+    // begin , end , rbegin ,rend ,clear ,insert , size ,swap
+
+    // stack
+    // stack is a container which follows LIFO (Last In First Out) principle
+    stack<int> st;
+    st.push(10);
+    st.emplace(20); // Add element to the top of the stack
+    cout << "Stack top: " << st.top() << endl;
+
+    st.pop(); // Remove the top element
+    cout << "Stack top after pop: " << st.top() << endl;
+    cout << "Stack size: " << st.size() << endl;
+    cout << "Is stack empty? " << (st.empty() ? "Yes" : "No") << endl;
 
     return 0;
 }
