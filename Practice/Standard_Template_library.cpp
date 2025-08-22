@@ -138,5 +138,58 @@ int main()
     cout << "Stack size: " << st.size() << endl;
     cout << "Is stack empty? " << (st.empty() ? "Yes" : "No") << endl;
 
+    // Queue
+    // Queue is a container which follows FIFO (First In First Out) principle
+    queue<int> q;
+    q.push(10);    // Add element to the back of the queue
+    q.emplace(20); // Add element to the back of the queue
+    q.back() = 30; // Modify the last element
+    q.pop();       // Remove the front element
+    q.front();     // Access the front element
+    cout << "Queue After operations: ";
+    cout << q.front() << endl;
+
+    // Priority Queue
+    // Priority Queue is a container which follows the priority order means the highest priority element is at the top
+    // it is implemented as a max heap by default
+    priority_queue<int> pq;
+    pq.push(10);                                                  // Add element to the priority queue
+    pq.emplace(20);                                               // Add element to the priority queue
+    pq.push(5);                                                   // Add element to the priority queue
+    cout << "Priority Queue top: " << pq.top() << endl;           // Access the top element
+    pq.pop();                                                     // Remove the top element
+    cout << "Priority Queue top after pop: " << pq.top() << endl; // Access the new top element
+
+    // to set low priority element at the top
+    // it also known as minimum heap or minimum priority queue
+    priority_queue<int, vector<int>, greater<int>> min_pq;
+    min_pq.push(10);
+    min_pq.emplace(20);                                         // Add element to the min priority queue
+    min_pq.push(5);                                             // Add element to the min priority queue
+    cout << "Min Priority Queue top: " << min_pq.top() << endl; // Access the top element
+
+    // Set
+    // Set is a container which stores unique elements in sorted order
+    set<int> s;
+    s.insert(10);
+    s.emplace(20);
+    s.insert(10); // Duplicate element will not be added
+    s.find(20);   // Find element in the set
+    s.erase(10);  // Remove element from the set
+    s.find(30);   // Check if element exists in the set if it does not exist it will return set.end()
+    s.count(20);  // Count the number of occurrences of an element (0 or 1 for set)
+    cout << "Set size: " << s.size() << endl;
+    s.upper_bound(15); // Returns the first element greater than 15
+    s.lower_bound(15); // Returns the first element not less than 15
+                       // lower_bound → first occurrence of key or next greater.
+                       // upper_bound → first element greater than key (skips all duplicates).
+
+    cout << "Set elements: ";
+    for (int i : s)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
     return 0;
 }
