@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    // Paris
-    // paris are the data structure which is used to store two values of different data types and same data types also .
+    // Pairs
+    // pairs are the data structure which is used to store two values of different data types and same data types also .
     pair<int, string> p = {1, "Paris"};
     // P.first refers to the first element of the pair, and p.second refers to the second element.
     cout << "Pair: " << p.first << ", " << p.second << endl;
@@ -190,6 +190,73 @@ int main()
         cout << i << " ";
     }
     cout << endl;
+
+    // multi set
+    // multi set is a container which stores multiple occurrences of elements in sorted order
+    multiset<int> ms;
+    ms.insert(10);
+    ms.insert(10);
+    ms.insert(10);
+
+    ms.erase(10); // It will erase all occurrences of 10
+    cout << "Multiset size after erase: " << ms.size() << endl;
+
+    // unordered set
+    // all the operatoins are the same as set but it does not store elements in sorted order
+    // lower bound and upper bound are not available in unordered set
+    unordered_set<int> us;
+    us.insert(10);
+    us.emplace(20);
+    us.insert(10); // Duplicate element will not be added
+    us.erase(10);  // Remove element from the unordered set
+    cout << "Unordered Set size: " << us.size() << endl;
+
+    // Map
+    // Map is a container which stores key-value pairs in sorted order of keys
+    map<int, string> mp;
+    mp[1] = "Devansh"; // Insert key-value pair
+    mp.emplace(2, "Kumar");
+    mp.insert({3, "Singh"});
+    mp[2] = "Sharma"; // Update value for key 1
+    cout << "Map elements: ";
+    for (auto it : mp) // auto is a keyword that lets the compiler automatically figure out the type of a variable based on the value you assign to it.
+    {
+        cout << it.first << " -> " << it.second << ", " << endl;
+    }
+
+    cout << mp[1] << endl; // Access value for key 1
+
+    // MultiMap
+    // MultiMap is a container which stores multiple key-value pairs with the same key in sorted order of keys
+    // all the functions are similar as map
+
+    // sorting
+
+    vector<int> v6 = {5, 2, 8, 1, 3};
+    sort(v6.begin(), v6.end()); // Sort in ascending order
+    cout << "Sorted Vector: ";
+    for (int i : v6)
+    {
+        cout << i << " ";
+    }
+
+    pair<int, int> a[] = {{1, 2}, {3, 1}, {2, 4}};
+    sort(a, a + 3); // it will sort according to first element if first element is same then it will sort according to second element
+
+    cout << "sorted pairs : ";
+    for (auto i : a)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
+
+    int num = 7;
+    int cnt = __builtin_popcount(num); //__builtin_popcount(x) returns how many 1s are in the binary form of x.
+
+    long long num1 = 1234567890123;
+    int cnt1 = __builtin_popcountll(num1); // for long long use __builtin_popcountll
+
+    cout << "Number of set bits in " << num << " = " << cnt << endl;
+    cout << "Number of set bits in " << num1 << " = " << cnt1 << endl;
 
     return 0;
 }
